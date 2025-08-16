@@ -133,9 +133,32 @@ jupyter notebook notebooks/01_attention_mechanism.ipynb
 3. **Depth vs Width**: 4 layers × 128d vs 2 layers × 256d
 4. **Position Encoding**: Learned vs sinusoidal
 
-## 🎉 Minimum Viable Success
+## 🎓 Key Learnings
 
-Your first goal: Generate *any* text that contains real words after training for 10 minutes on your laptop. Even "the the the cat" counts as success!
+### Attention Mechanism Insights
+
+1. **Core Intuition**: Attention is a learnable way to decide which parts of input to focus on
+   - Queries ask "what am I looking for?"
+   - Keys provide "what information is available?"
+   - Values contain "what to actually use"
+
+2. **Critical Implementation Details**:
+   - Scaling by √d_k prevents gradient vanishing (discovered via experiment)
+   - Causal masking enforces autoregressive property for generation
+   - Multi-head design allows learning different types of relationships
+
+3. **Findings from Implementation**:
+   - Without scaling: attention scores std=8.03 → training fails
+   - With scaling: std=1.00 → stable training
+   - Attention weights visualization shows model literally learning what to "look at"
+
+## 🎉 Progress Log
+
+- **Session 1**: Implemented core attention mechanisms
+  - ✅ Scaled dot-product attention 
+  - ✅ Causal masking for autoregressive models
+  - ✅ Multi-head attention with 8 heads
+  - ✅ Discovered importance of √d_k scaling through experiments
 
 ## 📚 Resources
 
