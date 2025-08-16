@@ -16,8 +16,8 @@ A hands-on project to learn transformer architecture by building a GPT model fro
 ## 📋 Project Phases
 
 ### Phase 1: Build Core Components (3-4 hours)
-- [ ] Scaled dot-product attention
-- [ ] Multi-head attention  
+- [x] Scaled dot-product attention ✅
+- [x] Multi-head attention ✅
 - [ ] Transformer block with residual connections
 - [ ] Full GPT architecture
 
