@@ -21,11 +21,17 @@ A hands-on project to learn transformer architecture by building a GPT model fro
 - [x] Transformer block with residual connections ✅
 - [x] Full GPT architecture ✅
 
-### Phase 2: Make It Train (2 hours)
-- [ ] Data preparation (character-level tokenization)
-- [ ] Training loop with loss tracking
-- [ ] Text generation with sampling
+### Phase 2: Make It Train (2 hours) 🚧
+- [x] Data preparation (character-level tokenization) ✅
+- [x] Training loop with loss tracking ✅
+- [x] Text generation with sampling ✅
 - [ ] Debug common training issues
+
+**Training Progress**:
+- Started on laptop CPU (too slow)
+- Migrated to Google Colab for GPU acceleration
+- Model: 384d, 6 heads, 6 layers (~10M parameters)
+- Training on Shakespeare dataset
 
 ### Phase 3: Experiment & Learn (2 hours)
 - [ ] Learning rate ablations
@@ -61,15 +67,16 @@ mini-gpt/
 ├── notebooks/
 │   ├── 01_attention_mechanism.ipynb
 │   ├── 02_transformer_block.ipynb
-│   ├── 03_training_loop.ipynb
-│   └── 04_experiments.ipynb
+│   ├── 03_gpt_model.ipynb
+│   └── 04_training_gpt_colab.ipynb
 ├── src/
 │   ├── model.py          # GPT implementation
 │   ├── train.py          # Training utilities
 │   └── generate.py       # Text generation
 ├── data/
 │   └── tiny_shakespeare.txt
-├── checkpoints/          # Saved models
+├── checkpoints/          
+│   └── shakespeare_gpt_complete.pt  # Trained model (10.7M params)
 └── results/             # Logs, plots, findings
 ```
 
