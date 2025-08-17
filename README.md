@@ -248,19 +248,19 @@ jupyter notebook notebooks/01_attention_mechanism.ipynb
 ## 📝 TODO: Next Steps
 
 ### Immediate Next Session
-1. **Load trained model**:
+
+1. **Load trained model (LOCAL - for quick experiments)**:
    ```python
-   checkpoint = torch.load('checkpoints/shakespeare_gpt_complete.pt')
+   # In a local Jupyter notebook
+   checkpoint = torch.load('checkpoints/shakespeare_gpt_complete.pt', map_location='cpu')
    model.load_state_dict(checkpoint['model_state_dict'])
    ```
 
-2. **Phase 3 Experiments** (pick one):
-   - Temperature ablation study
-   - Architecture comparisons (depth vs width)
-   - Different datasets (try modern English?)
-   - Implement beam search
+2. **Phase 3 Experiments**:
+   - **LOCAL**: Temperature studies, visualization, analysis
+   - **COLAB**: Architecture comparisons, continued training, new datasets
 
-3. **Analysis Tasks**:
+3. **Analysis Tasks (LOCAL)**:
    - Visualize attention patterns
    - Study what each layer learned
    - Profile memory usage
