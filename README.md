@@ -18,7 +18,7 @@ A hands-on project to learn transformer architecture by building a GPT model fro
 ### Phase 1: Build Core Components (3-4 hours)
 - [x] Scaled dot-product attention ✅
 - [x] Multi-head attention ✅
-- [ ] Transformer block with residual connections
+- [x] Transformer block with residual connections ✅
 - [ ] Full GPT architecture
 
 ### Phase 2: Make It Train (2 hours)
@@ -152,6 +152,20 @@ jupyter notebook notebooks/01_attention_mechanism.ipynb
    - With scaling: std=1.00 → stable training
    - Attention weights visualization shows model literally learning what to "look at"
 
+### Transformer Block Insights
+
+1. **Residual Connections are CRITICAL**:
+   - Without residuals: gradient norm = 0.000086 (vanished!)
+   - With residuals: gradient norm = 211.58
+   - **2.5 million times stronger gradient flow!**
+   - This enables training very deep networks (GPT-3 has 96 layers)
+
+2. **Component Interactions**:
+   - Layer Norm stabilizes activations across features
+   - Feed-forward adds "thinking" capacity between attention steps
+   - Dropout prevents overfitting
+   - Pre-LN architecture (normalize first) is more stable
+
 ## 🎉 Progress Log
 
 - **Session 1**: Implemented core attention mechanisms
@@ -159,6 +173,12 @@ jupyter notebook notebooks/01_attention_mechanism.ipynb
   - ✅ Causal masking for autoregressive models
   - ✅ Multi-head attention with 8 heads
   - ✅ Discovered importance of √d_k scaling through experiments
+
+- **Session 2**: Built transformer block
+  - ✅ Feed-forward network with GELU activation
+  - ✅ Layer normalization for stability
+  - ✅ Residual connections (discovered 2.5M× gradient improvement!)
+  - ✅ Complete transformer block with all components integrated
 
 ## 📚 Resources
 
